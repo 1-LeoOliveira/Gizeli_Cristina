@@ -104,6 +104,6 @@ body {
 @media (max-width: 767px) {
   .two-col { grid-template-columns: 1fr !important; }
   .three-col { grid-template-columns: 1fr 1fr !important; }
-  .four-col { grid-template-columns: 1fr 1fr !important; }
+  .four-col { grid-template-columns: 1fr !important; }
   .hero-reverse { flex-direction: column-reverse; }
 }
