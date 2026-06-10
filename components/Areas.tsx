@@ -31,7 +31,7 @@ export default function Areas() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }} className="four-col">
           {areas.map((area, i) => (
             <AnimatedSection key={i} delay={i * 60}>
-              <div className="card-premium hover-lift" style={{ height: '100%' }}
+              <div className="card-premium hover-lift" style={{ height: '100%', textAlign: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'var(--soft-brown)' }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(214,200,184,0.5)' }}>
                 <div style={{ width: 44, height: 44, background: 'rgba(138,155,122,0.2)', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
