@@ -109,6 +109,24 @@ export default function HowItWorks() {
               </div>
             </AnimatedSection>
           </div>
+
+          {/* Office gallery */}
+          <AnimatedSection delay={200} style={{ marginTop: 40 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+              {['/escritorio.png', '/escritorio2.png', '/escritorio3.png'].map((src, i) => (
+                <div key={i} style={{ borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 4px 20px rgba(42,32,24,0.10)', aspectRatio: '4/3' }}>
+                  <img
+                    src={src}
+                    alt={`Consultório ${i + 1}`}
+                    className="office-img"
+                  />
+                </div>
+              ))}
+            </div>
+            <p style={{ textAlign: 'center', fontFamily: "'DM Sans', sans-serif", fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--warm-gray)', marginTop: 16, opacity: 0.7 }}>
+              Consultório — Nova Serrana, MG
+            </p>
+          </AnimatedSection>
         </div>
       </section>
     </>
