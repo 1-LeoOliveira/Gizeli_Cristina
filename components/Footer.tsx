@@ -1,7 +1,9 @@
 'use client'
 
-import { MapPin, Phone } from 'lucide-react'
+import { MapPin, Phone, Instagram } from 'lucide-react'
 import { WhatsAppIcon } from './icons'
+
+const INSTAGRAM = 'https://www.instagram.com/gizelicristinapsicologa/'
 
 const WA = 'https://wa.me/5537991298403?text=Olá! Gostaria de agendar uma consulta.'
 
@@ -32,7 +34,13 @@ export function Footer() {
                 style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#fff'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
-                <Phone size={14} /> (34) 9XXXX-XXXX
+                <Phone size={14} /> (37) 99129-8403
+              </a>
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.6)'}>
+                <Instagram size={14} /> @gizelicristinapsicologa
               </a>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.6)', fontSize: 13 }}>
                 <MapPin size={14} style={{ marginTop: 2, flexShrink: 0 }} />
