@@ -2,7 +2,7 @@ export default function Stats() {
   const items = [
     ['10+', 'Anos de experiência'],
     ['Adolescentes', 'Adultos e casais'],
-    ['100%', 'Sigilo garantido'],
+    ['100%', 'Ética e Sigilo Profissional'],
     ['Online', 'e presencial'],
   ]
   return (

@@ -53,7 +53,7 @@ export default function Hero() {
 
             <div className="animate-fade-in-up" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, animationDelay: '0.4s' }}>
               {[
-                { icon: Monitor, label: 'Atendimento online' },
+                { icon: Monitor, label: 'Online e Presencial' },
                 { icon: MapPin, label: 'Nova Serrana - MG' },
                 { icon: Users, label: 'Adolescentes, adultos e casais' },
               ].map(({ icon: Icon, label }) => (
