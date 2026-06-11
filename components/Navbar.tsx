@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
 
 const WA = 'https://wa.me/5537991298403?text=Olá! Gostaria de agendar uma consulta.'
 
@@ -35,12 +34,11 @@ export default function Navbar() {
       <div className="container-premium">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 80 }}>
           <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
-            <Image src="/logo.png" alt="Gizeli Cristina" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
             <div>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 500, color: 'var(--charcoal)', lineHeight: 1.1 }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 500, color: 'var(--charcoal)', lineHeight: 1.1 }}>
                 Gizeli Cristina
               </div>
-              <div style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--warm-gray)', textTransform: 'uppercase', fontFamily: "'DM Sans', sans-serif" }}>
+              <div style={{ fontSize: 10, letterSpacing: '0.22em', color: 'var(--soft-brown)', textTransform: 'uppercase', fontFamily: "'DM Sans', sans-serif" }}>
                 Psicóloga
               </div>
             </div>

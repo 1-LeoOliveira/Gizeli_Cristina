@@ -32,13 +32,13 @@ export default function HowItWorks() {
                   Você não precisa saber por onde começar. Pode chegar com dúvidas, com ansiedade ou sem palavras — o espaço terapêutico é feito justamente para isso. O importante é dar o primeiro passo.
                 </p>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
                   {[
                     { icon: Clock, label: 'Duração', value: '50 minutos' },
                     { icon: Monitor, label: 'Modalidade', value: 'Online ou Presencial' },
                     { icon: Heart, label: 'Dinâmica', value: 'Intervenção desde a 1ª sessão' },
                   ].map(({ icon: Icon, label, value }) => (
-                    <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 20px', background: 'var(--cream)', borderRadius: 14, borderLeft: '3px solid var(--soft-brown)' }}>
+                    <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 24px', background: 'var(--cream)', borderRadius: 14, borderLeft: '3px solid var(--soft-brown)', width: '100%', maxWidth: 420 }}>
                       <Icon size={22} color="var(--sage)" style={{ flexShrink: 0 }} />
                       <div>
                         <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--warm-gray)', marginBottom: 2 }}>{label}</p>
