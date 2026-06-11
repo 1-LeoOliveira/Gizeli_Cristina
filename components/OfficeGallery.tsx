@@ -1,11 +1,49 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 const photos = ['/escritorio.png', '/escritorio2.png', '/escritorio3.png']
 
 export default function OfficeGallery() {
   const [active, setActive] = useState<string | null>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = active ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [active])
+
+  const lightbox = active && (
+    <div
+      onClick={() => setActive(null)}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9999,
+        background: 'rgba(42,32,24,0.9)', backdropFilter: 'blur(6px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '1rem',
+      }}
+    >
+      <img
+        src={active}
+        alt="Consultório"
+        style={{ maxWidth: '95vw', maxHeight: '85vh', borderRadius: '1rem', boxShadow: '0 24px 80px rgba(0,0,0,0.4)', objectFit: 'contain' }}
+      />
+      <button
+        onClick={() => setActive(null)}
+        style={{
+          position: 'absolute', top: 16, right: 16,
+          background: 'rgba(255,255,255,0.2)', border: '1.5px solid rgba(255,255,255,0.4)',
+          borderRadius: '50%', width: 48, height: 48,
+          cursor: 'pointer', color: '#fff', fontSize: 22, lineHeight: 1,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}
+        aria-label="Fechar"
+      >×</button>
+    </div>
+  )
 
   return (
     <>
@@ -24,32 +62,7 @@ export default function OfficeGallery() {
         Consultório — Nova Serrana, MG
       </p>
 
-      {active && (
-        <div
-          onClick={() => setActive(null)}
-          style={{
-            position: 'fixed', inset: 0, zIndex: 1000,
-            background: 'rgba(42,32,24,0.85)', backdropFilter: 'blur(6px)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: '2rem', cursor: 'zoom-out',
-          }}
-        >
-          <img
-            src={active}
-            alt="Consultório"
-            style={{ maxWidth: '90vw', maxHeight: '88vh', borderRadius: '1rem', boxShadow: '0 24px 80px rgba(0,0,0,0.4)', objectFit: 'contain' }}
-            onClick={e => e.stopPropagation()}
-          />
-          <button
-            onClick={() => setActive(null)}
-            style={{
-              position: 'absolute', top: 20, right: 24,
-              background: 'rgba(255,255,255,0.15)', border: 'none', borderRadius: '50%',
-              width: 40, height: 40, cursor: 'pointer', color: '#fff', fontSize: 20, lineHeight: 1,
-            }}
-          >×</button>
-        </div>
-      )}
+      {mounted && lightbox && createPortal(lightbox, document.body)}
     </>
   )
 }
