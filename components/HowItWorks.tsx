@@ -1,6 +1,7 @@
 import AnimatedSection from './AnimatedSection'
 import { Clock, MapPin, Heart, Monitor, Check } from 'lucide-react'
 import { WhatsAppIcon } from './icons'
+import OfficeGallery from './OfficeGallery'
 
 const WA = 'https://wa.me/5537991298403?text=Olá! Gostaria de agendar minha primeira sessão.'
 
@@ -31,16 +32,18 @@ export default function HowItWorks() {
                   Você não precisa saber por onde começar. Pode chegar com dúvidas, com ansiedade ou sem palavras — o espaço terapêutico é feito justamente para isso. O importante é dar o primeiro passo.
                 </p>
 
-                <div className="three-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {[
                     { icon: Clock, label: 'Duração', value: '50 minutos' },
                     { icon: Monitor, label: 'Modalidade', value: 'Online ou Presencial' },
                     { icon: Heart, label: 'Dinâmica', value: 'Intervenção desde a 1ª sessão' },
                   ].map(({ icon: Icon, label, value }) => (
-                    <div key={label} style={{ textAlign: 'center', padding: '18px 16px', background: 'var(--cream)', borderRadius: 14, borderTop: '2.5px solid var(--soft-brown)' }}>
-                      <Icon size={20} color="var(--sage)" style={{ margin: '0 auto 8px' }} />
-                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--warm-gray)', marginBottom: 4 }}>{label}</p>
-                      <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 17, color: 'var(--charcoal)' }}>{value}</p>
+                    <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 20px', background: 'var(--cream)', borderRadius: 14, borderLeft: '3px solid var(--soft-brown)' }}>
+                      <Icon size={22} color="var(--sage)" style={{ flexShrink: 0 }} />
+                      <div>
+                        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--warm-gray)', marginBottom: 2 }}>{label}</p>
+                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 18, color: 'var(--charcoal)' }}>{value}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -112,20 +115,7 @@ export default function HowItWorks() {
 
           {/* Office gallery */}
           <AnimatedSection delay={200} style={{ marginTop: 40 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
-              {['/escritorio.png', '/escritorio2.png', '/escritorio3.png'].map((src, i) => (
-                <div key={i} style={{ borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 4px 20px rgba(42,32,24,0.10)', aspectRatio: '4/3' }}>
-                  <img
-                    src={src}
-                    alt={`Consultório ${i + 1}`}
-                    className="office-img"
-                  />
-                </div>
-              ))}
-            </div>
-            <p style={{ textAlign: 'center', fontFamily: "'DM Sans', sans-serif", fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--warm-gray)', marginTop: 16, opacity: 0.7 }}>
-              Consultório — Nova Serrana, MG
-            </p>
+            <OfficeGallery />
           </AnimatedSection>
         </div>
       </section>

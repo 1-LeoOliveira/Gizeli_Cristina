@@ -35,12 +35,7 @@ export default function Navbar() {
       <div className="container-premium">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 80 }}>
           <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
-            <div style={{
-              width: 40, height: 40, borderRadius: '50%',
-              background: 'var(--soft-brown)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              color: '#fff', fontFamily: "'Cormorant Garamond', serif", fontSize: 18, fontWeight: 500
-            }}>G</div>
+            <Image src="/logo.png" alt="Gizeli Cristina" width={40} height={40} style={{ borderRadius: '50%', objectFit: 'cover' }} />
             <div>
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 500, color: 'var(--charcoal)', lineHeight: 1.1 }}>
                 Gizeli Cristina
